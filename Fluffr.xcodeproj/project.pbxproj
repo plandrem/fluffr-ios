@@ -16,8 +16,11 @@
 		CDD9C4F51A4A903400144029 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD9C4F31A4A903400144029 /* LaunchScreen.xib */; };
 		CDD9C5011A4A903400144029 /* FluffrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD9C5001A4A903400144029 /* FluffrTests.m */; };
 		CDD9C50C1A4A932600144029 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD9C50B1A4A932600144029 /* SplashScreenViewController.m */; };
-		CDD9C5121A4A966D00144029 /* BrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD9C5111A4A966D00144029 /* BrowserTableViewController.m */; };
 		CDD9C5171A4B661300144029 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9C5161A4B661300144029 /* QuartzCore.framework */; };
+		CDD9C5201A4B85EE00144029 /* BrowserCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD9C51F1A4B85EE00144029 /* BrowserCollectionViewController.m */; };
+		CDD9C5241A4B9C9300144029 /* BrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD9C5221A4B9C9300144029 /* BrowserCell.m */; };
+		CDD9C5251A4B9C9300144029 /* BrowserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD9C5231A4B9C9300144029 /* BrowserCell.xib */; };
+		CDD9C52A1A4DE0E800144029 /* Fluff.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD9C5291A4DE0E800144029 /* Fluff.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +51,14 @@
 		CDD9C5001A4A903400144029 /* FluffrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FluffrTests.m; sourceTree = "<group>"; };
 		CDD9C50A1A4A932600144029 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
 		CDD9C50B1A4A932600144029 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
-		CDD9C5101A4A966D00144029 /* BrowserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserTableViewController.h; sourceTree = "<group>"; };
-		CDD9C5111A4A966D00144029 /* BrowserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserTableViewController.m; sourceTree = "<group>"; };
 		CDD9C5161A4B661300144029 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CDD9C51E1A4B85EE00144029 /* BrowserCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserCollectionViewController.h; sourceTree = "<group>"; };
+		CDD9C51F1A4B85EE00144029 /* BrowserCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserCollectionViewController.m; sourceTree = "<group>"; };
+		CDD9C5211A4B9C9300144029 /* BrowserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserCell.h; sourceTree = "<group>"; };
+		CDD9C5221A4B9C9300144029 /* BrowserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserCell.m; sourceTree = "<group>"; };
+		CDD9C5231A4B9C9300144029 /* BrowserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowserCell.xib; sourceTree = "<group>"; };
+		CDD9C5281A4DE0E800144029 /* Fluff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fluff.h; sourceTree = "<group>"; };
+		CDD9C5291A4DE0E800144029 /* Fluff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fluff.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +113,11 @@
 		CDD9C4E01A4A903400144029 /* Fluffr */ = {
 			isa = PBXGroup;
 			children = (
-				CDD9C5101A4A966D00144029 /* BrowserTableViewController.h */,
-				CDD9C5111A4A966D00144029 /* BrowserTableViewController.m */,
 				CDD9C4E51A4A903400144029 /* AppDelegate.h */,
 				CDD9C4E61A4A903400144029 /* AppDelegate.m */,
 				CDD9C4EE1A4A903400144029 /* Main.storyboard */,
-				CDD9C50A1A4A932600144029 /* SplashScreenViewController.h */,
-				CDD9C50B1A4A932600144029 /* SplashScreenViewController.m */,
+				CDD9C5271A4DE0B000144029 /* Helper Classes */,
+				CDD9C5261A4DE08500144029 /* UI Elements */,
 				CDD9C4F11A4A903400144029 /* Images.xcassets */,
 				CDD9C4F31A4A903400144029 /* LaunchScreen.xib */,
 				CDD9C4E81A4A903400144029 /* Fluffr.xcdatamodeld */,
@@ -144,6 +150,29 @@
 				CDD9C4FF1A4A903400144029 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDD9C5261A4DE08500144029 /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				CDD9C51E1A4B85EE00144029 /* BrowserCollectionViewController.h */,
+				CDD9C51F1A4B85EE00144029 /* BrowserCollectionViewController.m */,
+				CDD9C5211A4B9C9300144029 /* BrowserCell.h */,
+				CDD9C5221A4B9C9300144029 /* BrowserCell.m */,
+				CDD9C5231A4B9C9300144029 /* BrowserCell.xib */,
+				CDD9C50A1A4A932600144029 /* SplashScreenViewController.h */,
+				CDD9C50B1A4A932600144029 /* SplashScreenViewController.m */,
+			);
+			name = "UI Elements";
+			sourceTree = "<group>";
+		};
+		CDD9C5271A4DE0B000144029 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CDD9C5281A4DE0E800144029 /* Fluff.h */,
+				CDD9C5291A4DE0E800144029 /* Fluff.m */,
+			);
+			name = "Helper Classes";
 			sourceTree = "<group>";
 		};
 		E2CC450CEFA982B17C61EDFE /* Frameworks */ = {
@@ -237,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDD9C5251A4B9C9300144029 /* BrowserCell.xib in Resources */,
 				CDD9C4F01A4A903400144029 /* Main.storyboard in Resources */,
 				CDD9C4F51A4A903400144029 /* LaunchScreen.xib in Resources */,
 				CDD9C4F21A4A903400144029 /* Images.xcassets in Resources */,
@@ -290,10 +320,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDD9C5201A4B85EE00144029 /* BrowserCollectionViewController.m in Sources */,
 				CDD9C4EA1A4A903400144029 /* Fluffr.xcdatamodeld in Sources */,
+				CDD9C5241A4B9C9300144029 /* BrowserCell.m in Sources */,
 				CDD9C4E71A4A903400144029 /* AppDelegate.m in Sources */,
+				CDD9C52A1A4DE0E800144029 /* Fluff.m in Sources */,
 				CDD9C50C1A4A932600144029 /* SplashScreenViewController.m in Sources */,
-				CDD9C5121A4A966D00144029 /* BrowserTableViewController.m in Sources */,
 				CDD9C4E41A4A903400144029 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
