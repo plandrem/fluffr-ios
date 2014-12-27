@@ -15,6 +15,7 @@
 @property NSString *objectId;
 @property NSString *sender;
 @property long sendDate;
+@property NSURL *imageUrl;
 @property UIImage *image;
 
 + (Fluff *) getNewFromObject:(PFObject *)object;

@@ -30,8 +30,9 @@
     f.title = object[@"title"];
     f.objectId = object[@"objectId"];
     
-    //    PFFile *imageFile = obj[@"image"];
-    //    f.image = [UIImage imageWithData:[imageFile getData]];
+    
+    PFFile *imageFile = object[@"image"];
+    f.imageUrl = [NSURL URLWithString: imageFile.url];
     
     return f;
     
