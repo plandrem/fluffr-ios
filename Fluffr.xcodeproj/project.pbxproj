@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CAD288032472EA241D8CECBA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B904E79EF2668063F81DFE15 /* libPods.a */; };
+		CD070C3A1A4E75FE004C0000 /* FluffDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD070C391A4E75FE004C0000 /* FluffDetailViewController.m */; };
 		CDD9C4E41A4A903400144029 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD9C4E31A4A903400144029 /* main.m */; };
 		CDD9C4E71A4A903400144029 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD9C4E61A4A903400144029 /* AppDelegate.m */; };
 		CDD9C4EA1A4A903400144029 /* Fluffr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CDD9C4E81A4A903400144029 /* Fluffr.xcdatamodeld */; };
@@ -37,6 +38,8 @@
 		1247DF8CA932D46BE0587F30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B7A00F5B9D8B52400A47584A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B904E79EF2668063F81DFE15 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD070C381A4E75FE004C0000 /* FluffDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FluffDetailViewController.h; sourceTree = "<group>"; };
+		CD070C391A4E75FE004C0000 /* FluffDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FluffDetailViewController.m; sourceTree = "<group>"; };
 		CDD9C4DE1A4A903400144029 /* Fluffr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluffr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD9C4E21A4A903400144029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD9C4E31A4A903400144029 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				CDD9C5231A4B9C9300144029 /* BrowserCell.xib */,
 				CDD9C50A1A4A932600144029 /* SplashScreenViewController.h */,
 				CDD9C50B1A4A932600144029 /* SplashScreenViewController.m */,
+				CD070C381A4E75FE004C0000 /* FluffDetailViewController.h */,
+				CD070C391A4E75FE004C0000 /* FluffDetailViewController.m */,
 			);
 			name = "UI Elements";
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				CDD9C5201A4B85EE00144029 /* BrowserCollectionViewController.m in Sources */,
 				CDD9C4EA1A4A903400144029 /* Fluffr.xcdatamodeld in Sources */,
 				CDD9C5241A4B9C9300144029 /* BrowserCell.m in Sources */,
+				CD070C3A1A4E75FE004C0000 /* FluffDetailViewController.m in Sources */,
 				CDD9C4E71A4A903400144029 /* AppDelegate.m in Sources */,
 				CDD9C52A1A4DE0E800144029 /* Fluff.m in Sources */,
 				CDD9C50C1A4A932600144029 /* SplashScreenViewController.m in Sources */,

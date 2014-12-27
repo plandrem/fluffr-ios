@@ -7,10 +7,14 @@
 //
 
 #import "BrowserCollectionViewController.h"
+#import "FluffDetailViewController.h"
 #import "BrowserCell.h"
 #import "Fluff.h"
 
 @interface BrowserCollectionViewController ()
+
+@property Fluff *selectedFluff;
+@property UIImage *imageToShow;
 
 @end
 
@@ -79,6 +83,19 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDelegate>
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    _selectedFluff = [_initialFluffsArray objectAtIndex:[indexPath row]];
+    NSLog(@"Selected Item: %@",_selectedFluff.title);
+    
+    BrowserCell *cell = (BrowserCell *) [collectionView cellForItemAtIndexPath:indexPath];
+    
+    _imageToShow = [cell.fluffImage image];
+
+    
+    [self performSegueWithIdentifier:@"FluffSelectedSegue" sender:@"fluff"];
+}
+
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -107,5 +124,24 @@ static NSString * const reuseIdentifier = @"Cell";
 	
 }
 */
+
+#pragma mark Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if (sender == @"fluff") {
+        NSLog(@"sender was 'fluff'");
+        
+        FluffDetailViewController *vc = [segue destinationViewController];
+        
+        if (!_imageToShow) {
+            NSLog(@"no image to show.");
+        }
+        
+        vc.image = _imageToShow;
+//        [vc.fluffDetailImageView ]
+    }
+
+}
 
 @end
