@@ -85,6 +85,7 @@ static NSMutableArray *initialFluffs;
     
     [drawerController setCenterViewController:navController];
     [drawerController setLeftDrawerViewController:sideDrawer];
+    [drawerController setMaximumLeftDrawerWidth:200.0];
 }
 
 @end

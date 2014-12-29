@@ -151,6 +151,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)setupLeftMenuButton {
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [leftDrawerButton setImage:[UIImage imageNamed:@"fluffr_cat_icon-01"]];
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton];
 }
 
