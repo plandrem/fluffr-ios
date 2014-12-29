@@ -47,14 +47,15 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SideDrawerCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    cell.textLabel.text = [_pages objectAtIndex:[indexPath row]];
-    
-    return cell;
-}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SideDrawerCell" forIndexPath:indexPath];
+//    
+//    // Configure the cell...
+//    cell.textLabel.text = [_pages objectAtIndex:[indexPath row]];
+//    cell.textLabel.textColor = [UIColor whiteColor];
+//    
+//    return cell;
+//}
 
 
 /*
