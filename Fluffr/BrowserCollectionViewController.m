@@ -10,6 +10,8 @@
 #import "FluffDetailViewController.h"
 #import "BrowserCell.h"
 #import "Fluff.h"
+#import <MMDrawerBarButtonItem.h>
+#import <UIViewController+MMDrawerController.h>
 
 @interface BrowserCollectionViewController ()
 
@@ -24,6 +26,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupLeftMenuButton];
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -129,7 +132,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (sender == @"fluff") {
+    if ([[segue identifier] isEqualToString:@"FluffSelectedSegue"]) {
         NSLog(@"sender was 'fluff'");
         
         FluffDetailViewController *vc = [segue destinationViewController];
@@ -142,6 +145,17 @@ static NSString * const reuseIdentifier = @"Cell";
 //        [vc.fluffDetailImageView ]
     }
 
+}
+
+#pragma mark Nav Drawer
+
+- (void)setupLeftMenuButton {
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton];
+}
+
+- (void)leftDrawerButtonPress:(id)leftDrawerButtonPress {
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 @end

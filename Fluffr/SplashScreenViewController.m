@@ -10,6 +10,8 @@
 #import <Parse/Parse.h>
 #import "Fluff.h"
 #import "BrowserCollectionViewController.h"
+#import "SideDrawerController.h"
+#import <MMDrawerController.h>
 
 @interface SplashScreenViewController ()
 
@@ -35,20 +37,23 @@ static NSMutableArray *initialFluffs;
     [query addDescendingOrder:@"createdAt"];
     query.limit = 20;
     
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            NSLog(@"query complete.");
-            
-            initialFluffs = [[NSMutableArray alloc] init];
-            for (PFObject *obj in objects) {
-                [initialFluffs addObject:[Fluff getNewFromObject:obj]];
-            }
-            [self performSegueWithIdentifier:@"SplashOnFinishLoading" sender:self];
-            
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+    //TODO - remove this line
+    [self performSegueWithIdentifier:@"SplashOnFinishLoading" sender:self];
+    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            NSLog(@"query complete.");
+//            
+//            initialFluffs = [[NSMutableArray alloc] init];
+//            for (PFObject *obj in objects) {
+//                [initialFluffs addObject:[Fluff getNewFromObject:obj]];
+//            }
+//            [self performSegueWithIdentifier:@"SplashOnFinishLoading" sender:self];
+//            
+//        } else {
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
     
     
     
@@ -68,8 +73,18 @@ static NSMutableArray *initialFluffs;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    BrowserCollectionViewController *browser = [segue destinationViewController];
+    MMDrawerController *drawerController = [segue destinationViewController];
+    
+    BrowserCollectionViewController *browser = [self.storyboard instantiateViewControllerWithIdentifier:@"BROWSE_VIEW_CONTROLLER"];
     browser.initialFluffsArray = initialFluffs;
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:browser];
+    
+    SideDrawerController *sideDrawer = [self.storyboard instantiateViewControllerWithIdentifier:    @"SIDE_DRAWER_CONTROLLER"];
+
+    
+    [drawerController setCenterViewController:navController];
+    [drawerController setLeftDrawerViewController:sideDrawer];
 }
 
 @end
