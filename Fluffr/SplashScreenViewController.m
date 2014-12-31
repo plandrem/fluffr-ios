@@ -11,9 +11,6 @@
 #import "Fluff.h"
 #import "BrowserCollectionViewController.h"
 #import "InboxTableViewController.h"
-#import "SideDrawerController.h"
-#import <MMDrawerController.h>
-#import "DrawerHelper.h"
 
 @interface SplashScreenViewController ()
 
@@ -75,22 +72,10 @@ static NSMutableArray *initialFluffs;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    MMDrawerController *drawerController = [segue destinationViewController];
-    
     BrowserCollectionViewController *browser = [self.storyboard instantiateViewControllerWithIdentifier:@"BROWSE_VIEW_CONTROLLER"];
     browser.initialFluffsArray = initialFluffs;
     
-    InboxTableViewController *inbox = [self.storyboard instantiateViewControllerWithIdentifier:@"INBOX_VIEW_CONTROLLER"];
-    
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:inbox];
-    
-    SideDrawerController *sideDrawer = [self.storyboard instantiateViewControllerWithIdentifier:    @"SIDE_DRAWER_CONTROLLER"];
-
-    
-    [drawerController setCenterViewController:navController];
-    [drawerController setLeftDrawerViewController:sideDrawer];
-    [drawerController setMaximumLeftDrawerWidth:200.0];
-    
+//    InboxTableViewController *inbox = [self.storyboard instantiateViewControllerWithIdentifier:@"INBOX_VIEW_CONTROLLER"];
     
 }
 

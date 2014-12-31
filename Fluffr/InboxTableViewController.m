@@ -19,8 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupLeftMenuButton];
-
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -108,16 +106,5 @@
 }
 */
 
-#pragma mark Nav Drawer
-
-- (void)setupLeftMenuButton {
-    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
-    [leftDrawerButton setImage:[UIImage imageNamed:@"fluffr_cat_icon-01"]];
-    [self.navigationItem setLeftBarButtonItem:leftDrawerButton];
-}
-
-- (void)leftDrawerButtonPress:(id)leftDrawerButtonPress {
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-}
 
 @end
