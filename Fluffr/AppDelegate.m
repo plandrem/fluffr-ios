@@ -27,6 +27,10 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    _fluffs = [[NSMutableArray alloc] init];
+    _inbox = [[NSMutableArray alloc] init];
+    _favorites = [[NSMutableArray alloc] init];
+    
     return YES;
 }
 

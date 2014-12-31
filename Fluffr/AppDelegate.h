@@ -12,6 +12,9 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property int testInt;
+@property NSMutableArray *fluffs;
+@property NSMutableArray *inbox;
+@property NSMutableArray *favorites;
 
 @property (strong, nonatomic) UIWindow *window;
 

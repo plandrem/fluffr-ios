@@ -16,6 +16,7 @@
 
 @property Fluff *selectedFluff;
 @property UIImage *imageToShow;
+@property AppDelegate *app;
 
 @end
 
@@ -26,8 +27,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSLog(@"test int is %i",app.testInt);
+    _app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,7 +39,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
 //    [self.collectionView setCollectionViewLayout:flowLayout];
     
-    NSLog(@"Browser Loaded with %lu fluffs.", (unsigned long)[_initialFluffsArray count]);
+    NSLog(@"Browser Loaded with %lu fluffs.", (unsigned long)[_app.fluffs count]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +65,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [_initialFluffsArray count];
+    return [_app.fluffs count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -78,7 +78,7 @@ static NSString * const reuseIdentifier = @"Cell";
     int row = [indexPath row];
     
     // Configure the cell
-    Fluff *f = [_initialFluffsArray objectAtIndex:row];
+    Fluff *f = [_app.fluffs objectAtIndex:row];
     cell.title.text = f.title;
     [cell setImageFromFluff:f];
     
@@ -89,7 +89,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    _selectedFluff = [_initialFluffsArray objectAtIndex:[indexPath row]];
+    _selectedFluff = [_app.fluffs objectAtIndex:[indexPath row]];
     NSLog(@"Selected Item: %@",_selectedFluff.title);
     
     BrowserCell *cell = (BrowserCell *) [collectionView cellForItemAtIndexPath:indexPath];

@@ -26,6 +26,7 @@ static NSMutableArray *initialFluffs;
     // Do any additional setup after loading the view.
 
     NSLog(@"Starting Up...");
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     NSLog(@"Logging in...");
     PFUser *user = [PFUser logInWithUsername:@"+16518155005" password:@"password"];
@@ -37,23 +38,22 @@ static NSMutableArray *initialFluffs;
     [query addDescendingOrder:@"createdAt"];
     query.limit = 20;
     
-    //TODO - remove this line
-    [self performSegueWithIdentifier:@"SplashOnFinishLoading" sender:self];
-    
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (!error) {
-//            NSLog(@"query complete.");
-//            
-//            initialFluffs = [[NSMutableArray alloc] init];
-//            for (PFObject *obj in objects) {
-//                [initialFluffs addObject:[Fluff getNewFromObject:obj]];
-//            }
-//            [self performSegueWithIdentifier:@"SplashOnFinishLoading" sender:self];
-//            
-//        } else {
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSLog(@"query complete.");
+            
+            initialFluffs = [[NSMutableArray alloc] init];
+            for (PFObject *obj in objects) {
+                [initialFluffs addObject:[Fluff getNewFromObject:obj]];
+                [app.fluffs addObject:[Fluff getNewFromObject:obj]];
+            }
+            
+            [self performSegueWithIdentifier:@"SplashOnFinishLoading" sender:self];
+            
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
     
     
     
@@ -72,16 +72,7 @@ static NSMutableArray *initialFluffs;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
-    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    app.testInt = 5;
-    
-//    BrowserCollectionViewController *browser = [self.storyboard instantiateViewControllerWithIdentifier:@"BROWSE_VIEW_CONTROLLER"];
-//    browser.initialFluffsArray = initialFluffs;
-    
-//    InboxTableViewController *inbox = [self.storyboard instantiateViewControllerWithIdentifier:@"INBOX_VIEW_CONTROLLER"];
-    
+        
 }
 
 @end
