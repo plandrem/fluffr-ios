@@ -1,33 +1,26 @@
 //
-//  SideDrawerController.m
+//  InboxTableViewController.m
 //  Fluffr
 //
-//  Created by Patrick Landreman on 12/28/14.
+//  Created by Patrick Landreman on 12/29/14.
 //  Copyright (c) 2014 Patrick Landreman. All rights reserved.
 //
 
-#import "SideDrawerController.h"
-#import <UIViewController+MMDrawerController.h>
-#import "BrowserCollectionViewController.h"
 #import "InboxTableViewController.h"
+#import "InboxCell.h"
+#import <MMDrawerBarButtonItem.h>
+#import <UIViewController+MMDrawerController.h>
 
-#define BROWSE 0
-#define FAVORITES 1
-#define INBOX 2
-
-@interface SideDrawerController ()
-
-@property NSArray *pages;
+@interface InboxTableViewController ()
 
 @end
 
-@implementation SideDrawerController
-
+@implementation InboxTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _pages = @[@"Browse",@"Favorites",@"Inbox"];
+    [self setupLeftMenuButton];
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,34 +43,26 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [_pages count];
+    return 3;
 }
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    InboxCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inboxCell" forIndexPath:indexPath];
+    
+    // Configure the cell...
+    cell.senderLabel.text = @"From: Balls.";
+    cell.fluffImage.image = [UIImage imageNamed:@"fluffr_cat_icon-01"];
+    cell.senderImage.image = [UIImage imageNamed:@"fluffr_cat_icon-01"];
+    
+    return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([indexPath row] == BROWSE) {
-        NSLog(@"Browse tapped.");
-        
-        BrowserCollectionViewController *browser = [[BrowserCollectionViewController alloc] init];
-        [self.mm_drawerController setCenterViewController:browser];
-        
-    } else if ([indexPath row] == INBOX){
-        NSLog(@"Inbox tapped.");
-    } else if ([indexPath row] == FAVORITES){
-        NSLog(@"Favorites tapped.");
-    }
+    return NO;
 }
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SideDrawerCell" forIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    cell.textLabel.text = [_pages objectAtIndex:[indexPath row]];
-//    cell.textLabel.textColor = [UIColor whiteColor];
-//    
-//    return cell;
-//}
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -122,5 +107,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark Nav Drawer
+
+- (void)setupLeftMenuButton {
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [leftDrawerButton setImage:[UIImage imageNamed:@"fluffr_cat_icon-01"]];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton];
+}
+
+- (void)leftDrawerButtonPress:(id)leftDrawerButtonPress {
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
 
 @end

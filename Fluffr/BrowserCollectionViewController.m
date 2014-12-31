@@ -26,7 +26,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupLeftMenuButton];
+//    [self setupLeftMenuButton];
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -158,5 +158,6 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)leftDrawerButtonPress:(id)leftDrawerButtonPress {
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
+
 
 @end

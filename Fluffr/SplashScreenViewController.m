@@ -10,8 +10,10 @@
 #import <Parse/Parse.h>
 #import "Fluff.h"
 #import "BrowserCollectionViewController.h"
+#import "InboxTableViewController.h"
 #import "SideDrawerController.h"
 #import <MMDrawerController.h>
+#import "DrawerHelper.h"
 
 @interface SplashScreenViewController ()
 
@@ -78,7 +80,9 @@ static NSMutableArray *initialFluffs;
     BrowserCollectionViewController *browser = [self.storyboard instantiateViewControllerWithIdentifier:@"BROWSE_VIEW_CONTROLLER"];
     browser.initialFluffsArray = initialFluffs;
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:browser];
+    InboxTableViewController *inbox = [self.storyboard instantiateViewControllerWithIdentifier:@"INBOX_VIEW_CONTROLLER"];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:inbox];
     
     SideDrawerController *sideDrawer = [self.storyboard instantiateViewControllerWithIdentifier:    @"SIDE_DRAWER_CONTROLLER"];
 
@@ -86,6 +90,8 @@ static NSMutableArray *initialFluffs;
     [drawerController setCenterViewController:navController];
     [drawerController setLeftDrawerViewController:sideDrawer];
     [drawerController setMaximumLeftDrawerWidth:200.0];
+    
+    
 }
 
 @end
