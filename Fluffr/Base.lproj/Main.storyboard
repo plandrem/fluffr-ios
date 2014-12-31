@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gox-f7-jPV">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -60,6 +61,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="INBOX_VIEW_CONTROLLER" id="iSo-Dz-gzC" customClass="InboxTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="485" sectionHeaderHeight="22" sectionFooterHeight="22" id="tcR-TD-B9A">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -139,13 +141,13 @@
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="d9m-dC-Z6G"/>
+                                                    <exclude reference="NQE-TS-oYe"/>
+                                                    <exclude reference="yr9-fb-O8L"/>
+                                                    <exclude reference="clp-cz-t4h"/>
                                                     <exclude reference="Kom-K2-IQ2"/>
                                                     <exclude reference="TSc-8h-xSD"/>
                                                     <exclude reference="YEX-9I-uqs"/>
                                                     <exclude reference="tT7-qF-u9p"/>
-                                                    <exclude reference="clp-cz-t4h"/>
-                                                    <exclude reference="NQE-TS-oYe"/>
-                                                    <exclude reference="yr9-fb-O8L"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -156,13 +158,13 @@
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="d9m-dC-Z6G"/>
+                                                    <include reference="NQE-TS-oYe"/>
+                                                    <include reference="yr9-fb-O8L"/>
+                                                    <include reference="clp-cz-t4h"/>
                                                     <include reference="Kom-K2-IQ2"/>
                                                     <include reference="TSc-8h-xSD"/>
                                                     <include reference="YEX-9I-uqs"/>
                                                     <include reference="tT7-qF-u9p"/>
-                                                    <include reference="clp-cz-t4h"/>
-                                                    <include reference="NQE-TS-oYe"/>
-                                                    <include reference="yr9-fb-O8L"/>
                                                 </mask>
                                             </variation>
                                         </view>
@@ -309,6 +311,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pKA-r6-5ta"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wr8-RW-a3e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -322,6 +325,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="SIDE_DRAWER_CONTROLLER" id="iV9-qV-91f" customClass="SideDrawerController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="siN-eD-RTr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
@@ -376,9 +380,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="27" y="11" width="71" height="21"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -416,9 +417,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="26" y="11" width="43" height="21"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
