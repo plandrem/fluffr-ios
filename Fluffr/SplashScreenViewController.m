@@ -11,6 +11,7 @@
 #import "Fluff.h"
 #import "BrowserCollectionViewController.h"
 #import "InboxTableViewController.h"
+#import "AppDelegate.h"
 
 @interface SplashScreenViewController ()
 
@@ -72,8 +73,12 @@ static NSMutableArray *initialFluffs;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    BrowserCollectionViewController *browser = [self.storyboard instantiateViewControllerWithIdentifier:@"BROWSE_VIEW_CONTROLLER"];
-    browser.initialFluffsArray = initialFluffs;
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    app.testInt = 5;
+    
+//    BrowserCollectionViewController *browser = [self.storyboard instantiateViewControllerWithIdentifier:@"BROWSE_VIEW_CONTROLLER"];
+//    browser.initialFluffsArray = initialFluffs;
     
 //    InboxTableViewController *inbox = [self.storyboard instantiateViewControllerWithIdentifier:@"INBOX_VIEW_CONTROLLER"];
     

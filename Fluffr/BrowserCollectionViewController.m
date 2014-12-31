@@ -10,6 +10,7 @@
 #import "FluffDetailViewController.h"
 #import "BrowserCell.h"
 #import "Fluff.h"
+#import "AppDelegate.h"
 
 @interface BrowserCollectionViewController ()
 
@@ -24,6 +25,9 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"test int is %i",app.testInt);
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;

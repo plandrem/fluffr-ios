@@ -11,6 +11,8 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+@property int testInt;
+
 @property (strong, nonatomic) UIWindow *window;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
